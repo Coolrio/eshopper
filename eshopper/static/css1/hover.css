@@ -1,0 +1,134 @@
+// Variables =============================================================
+$font-family: "Open Sans", Helvetica, Arial, sans-serif
+
+// Mixins ================================================================
+=absolute($top, $left, $right, $bottom)
+	position: absolute
+	top: $top
+	left: $left
+	right: $right
+	bottom: $bottom
+
+=translate($x,$y)
+	-webkit-transform: translate($x,$y)
+	-webkit-transform: translate3d($x,$y,0)
+	-ms-transform: translate($x,$y)
+	-ms-transform: translate3d($x,$y,0)
+	transform: translate($x,$y)
+	transform: translate3d($x,$y,0)
+
+// Colors ================================================================
+// Boomer Colors
+$boom: #330066
+$boom-dk: darken($boom, 2%)
+$boom-lt: #9966CC
+
+// Font Colors
+$font-dark: #333
+
+// Base colors
+$grey: #BDC4D0
+$background-light: #F3F4F8
+$background-dark: #2F3032
+$border-light: darken($background-light, 2%)
+$border-dark: darken($background-dark, 2%)
+$primary-color: #004983
+
+// Base ==================================================================
+*:not(i)
+	font-family: $font-family
+
+html
+	height: 100%
+	font-size: 16px
+
+body
+	height: 100%
+	padding: 50px 0
+	background: $background-light
+
+h1
+	margin: 0 0 0.25rem
+	font:
+		size: 2.5rem
+		weight: 300
+	text:
+		align: center
+	color: #333
+
+h4
+	margin: 0 0 2rem
+	font:
+		size: 1.25rem
+		weight: 600
+	text:
+		align: center
+	color: $grey
+
+p
+	max-width: 800px
+	margin: 0 auto 20px
+	font:
+		size: 0.875rem
+		weight: 400
+	text:
+		align: center
+	letter-spacing: 0.25px
+	color: #333
+
+.grid
+	display: flex
+	flex:
+		direction: row
+		wrap: wrap
+	align:
+		content: flex-start
+		items: center
+	justify-content: center
+	max-width: 80%
+	height: 100%
+	margin: 0 auto
+	padding: 30px 0 0
+	list-style: none
+
+.grid-item
+	display: flex
+	flex:
+		direction: column
+		grow: 0
+		shrink: 0
+		basis: 260px
+	align-items: center
+	justify-content: center
+	position: relative
+	height: 220px
+	margin-right: 10px
+	margin-bottom: 10px
+	font:
+		size: 3rem
+		weight: 600
+	color: #ecf0f7
+	background: white
+	box-shadow: inset 0px 0px 0px 1px  $border-light
+	+translate(0,0)
+	transition: transform 0.14s ease-in, text-shadow 0.1s ease-in
+	will-change: transform
+	cursor: pointer
+
+	// Pseudo elements ------------------
+	&:before
+		content: ''
+		+absolute(0,0,0,0)
+		background: none
+		border-radius: 3px
+		box-shadow: 0 10px 24px 0px rgba(0,0,0,0.02), 0 8px 20px -2px rgba(0,0,0,0.06), 0 6px 10px -6px rgba(0,0,0,0.10)
+		transition: opacity 0.1s ease-in
+		will-change: opacity
+		opacity: 0
+
+	// CSS state ------------------------
+	&:hover
+		+translate(0,-4px)
+
+		&:before
+			opacity: 1

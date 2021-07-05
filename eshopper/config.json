@@ -1,0 +1,23 @@
+
+{
+  "params":
+
+  {
+    "local_server":"True",
+    "local_uri":"mysql+pymysql://root:@localhost/eshopper",
+    "prod_uri":"mysql+pymysql://root:@localhost/eshopper",
+    "fb_url":"https://facebook.com/rionalphonso",
+    "tw_url":"https://twitter.com/rionalphonso",
+    "gh_url": "https://github.com/rionalphonso",
+    "blog_name": "TechnicalRio",
+    "tag_line": "TechNews for Tech Geeks",
+    "gmail-user":"rionalphonso24@gmail.com",
+    "gmail-password":"rion2411",
+    "about_text": "Hi my name is Rion. I am a Coder, I am going to desing an amazing website which will be mind blowing.The website ",
+    "no_of_posts": 6,
+    "login_image":"admin_login.svg",
+    "admin_user":"rion",
+    "admin_password": "coolrio",
+    "upload_location": "C:\\Users\\Rion Alphonso\\PycharmProjects\\flask project\\static\\img"
+  }
+}
