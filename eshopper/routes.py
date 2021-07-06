@@ -166,10 +166,10 @@ def post_route1(brands,item):
 
 
 
-@app.route("/productbrand/<string:brands>", methods=['GET'])
-def post_route2(brands):
+@app.route("/productbrand/<string:brand1>", methods=['GET'])
+def post_route2(brand1):
 
-    brandname1 = product.query.filter_by(brand=brands).all()
+    brandname1 = product.query.filter_by(brand=brand1).all()
     return render_template('productpage.html', brandname1=brandname1)
 
 
