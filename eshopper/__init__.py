@@ -1,28 +1,20 @@
 
-from flask import Flask, render_template, request, session, redirect, url_for
-
+from flask import Flask,Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.utils import secure_filename
 from flask_mail import Mail
 import json
-from datetime import datetime
 from flask_bcrypt import Bcrypt
-
 
 
 with open('eshopper/config.json', 'r') as c:
     params = json.load(c)["params"]
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "super-secret-key"
 app.config['UPLOAD_FOLDER'] = "C:\\Users\\Rion Alphonso\\PycharmProjects\\flask eshopper\\static\\img"
 app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
+app.static_folder = 'static'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-
-
-
-
 
 app.config.update(
         MAIL_SERVER='smtp.gmail.com',
@@ -34,4 +26,14 @@ app.config.update(
 mail = Mail(app)
 
 
-from eshopper import routes
+from eshopper.user.routes import user
+from eshopper.home.routes import home
+from eshopper.products.routes import products
+from eshopper.utils.routes import utils
+from eshopper.chatbot.routes import chatbot
+
+app.register_blueprint(user)
+app.register_blueprint(home)
+app.register_blueprint(products)
+app.register_blueprint(utils)
+app.register_blueprint(chatbot)

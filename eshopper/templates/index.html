@@ -233,7 +233,7 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<a href="/productname/{{products.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /><br></a>
-											<br><p><a href=cart.html">{{products.productname}}</a></p>
+											<br><p><a href="/productname/{{products.productid}}">{{products.productname}}</a></p>
 											<a href="/productname/{{products.productid}}"><h2>{{products.productprice}}</h2></a>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
@@ -300,8 +300,8 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<a href="/productname/{{mobile.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /></a>
-											><h2>{{mobile.productprice}}</h2>
-											<a href="/productname/{{mobile.productid}}"{{mobile.productname}}</a></p>
+											<h2>{{mobile.productprice}}</h2>
+											<a href="/productname/{{mobile.productid}}">{{mobile.productname}}</a></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
 										<div class="product-overlay">
@@ -332,8 +332,8 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<a href="/productname/{{tv.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px" width="200px" /></a>
-											><h2>{{tv.productprice}}</h2>
-												<a href="/productname/{{tv.productid}}"<p>{{tv.productname}}</a></p>
+											<h2>{{tv.productprice}}</h2>
+												<a href="/productname/{{tv.productid}}"></a><p>{{tv.productname}}</a></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
 										<div class="product-overlay">
