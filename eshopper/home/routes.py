@@ -26,3 +26,9 @@ def home1():
     return render_template('index.html', product=product_pro, brand=brand, mobile=mobile, wired_earphone=wired_earphone
                            ,laptop=laptop,washing=washing,tv=tv,name=name)
 
+
+@home.route("/search", methods=['GET'])
+def searchbar():
+
+       # brandname = product.query.filter_by(brand=serach_string).all()
+        return render_template('productpage.html')

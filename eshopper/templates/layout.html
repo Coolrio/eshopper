@@ -70,13 +70,19 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-
+								{% if session['user'] %}
 								<li><a href="/account"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="/logout"><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="/wishlist1"><i class="fa fa-star"></i> Wishlist</a></li>
+								<li><a href="/cart1"><i class="fa fa-crosshairs"></i> Cart</a></li>
+								<li><a href="/chatbot"><i class="fa fa-shopping-cart"></i>Help </a></li>
+								<li><a href="/logout"><i class="fa fa-lock"></i> Logout</a></li>
+								{% else %}
+								<li><a href="/account"><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="/wishlist1"><i class="fa fa-star"></i> Wishlist</a></li>
+								<li><a href="/chatbot"><i class="fa fa-crosshairs"></i>Help</a></li>
+								<li><a href="/register"><i class="fa fa-shopping-cart"></i>Register</a></li>
 								<li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
-
+								{% endif %}
 							</ul>
 						</div>
 					</div>
@@ -120,9 +126,12 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
+
+					<form class="example" action="/search" method="get">
+					  <input type="text" placeholder="Search.." name="search" id="search"6>
+                      <button type="submit"><i class="fa fa-search" href="/search"></i></button>
+                      </form>
+
 					</div>
 				</div>
 			</div>

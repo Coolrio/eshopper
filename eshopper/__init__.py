@@ -30,10 +30,15 @@ from eshopper.user.routes import user
 from eshopper.home.routes import home
 from eshopper.products.routes import products
 from eshopper.utils.routes import utils
-from eshopper.chatbot.routes import chatbot
+#from eshopper.chatbot.routes import chatbot
+from eshopper.wishlist.routes import wishlist
+from eshopper.cart1.routes import cart
+
 
 app.register_blueprint(user)
 app.register_blueprint(home)
 app.register_blueprint(products)
 app.register_blueprint(utils)
-app.register_blueprint(chatbot)
+#app.register_blueprint(chatbot)
+app.register_blueprint(wishlist)
+app.register_blueprint(cart)

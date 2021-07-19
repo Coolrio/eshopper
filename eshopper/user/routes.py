@@ -33,7 +33,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
-        return redirect(url_for('login'))
+        return redirect(url_for('user.login'))
     return render_template('register1.html', title='Register', form=form)
 
 
@@ -47,7 +47,8 @@ def login():
 
             if login and bcrypt.check_password_hash(login.password, userpass):
                 session['user'] = username
-                return redirect(url_for('home'))
+
+                return redirect(url_for('home.home1'))
 
             else:
                 flash('email id or password does not exists','danger')
@@ -57,7 +58,7 @@ def login():
 
 
 
-@user.route("/account")
+@user.route("/account", methods=['GET', 'POST'])
 def account():
     try:
         loginn=user_login.query.filter_by(email=session['user']).first()
@@ -73,26 +74,27 @@ def account():
             state = request.form.get('state')
             country = request.form.get('country')
             houseno = request.form.get('houseno')
-            if request.method == 'post':
-                loginn.firstname=firstname
-                loginn.lastname=lastname
-                loginn.email=email
-                loginn.phone=mobile
-                loginn.pincode=pincode
-                loginn.city=city
-                loginn.landmark=landmark
-                loginn.state=state
-                loginn.country=country
-                loginn.houseno=houseno
-                loginn.address=address
+            if request.method == 'POST':
+                loginn1 = user_login.query.filter_by(email=session['user']).first()
+                loginn1.firstname=firstname
+                loginn1.lastname=lastname
+                loginn1.email=email
+                loginn1.phone=mobile
+                loginn1.pincode=pincode
+                loginn1.city=city
+                loginn1.landmark=landmark
+                loginn1.state=state
+                loginn1.country=country
+                loginn1.houseno=houseno
+                loginn1.address=address
                 db.session.commit()
-                return redirect('account')
+                return redirect('/account')
             return render_template('userprofile.html', loginn=loginn)
         else:
-            return redirect(url_for('login'))
+            return redirect(url_for('user,login'))
     except:
         flash('User is not logged in', 'danger')
-        return redirect(url_for('login'))
+        return redirect(url_for('user.login'))
 
 @user.route("/logout")
 def logout():

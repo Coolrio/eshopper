@@ -21,5 +21,5 @@ class product(db.Model):
     soldby = db.Column(db.String(15), nullable=True)
     brand = db.Column(db.String(12), nullable=True)
     stock = db.Column(db.String(25), nullable=True)
-
+    total = db.Column(db.String(25), nullable=True)
 

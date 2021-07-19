@@ -16,8 +16,8 @@
 							<div class="item active">
 								<div class="col-sm-6">
 									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<h2>Festival offer</h2>
+									<p>Attractive offers on this diwali, Bring happiness to home. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
@@ -208,19 +208,7 @@
 						<div class="shipping text-center"><!--shipping-->
 							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
 						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-					
+
 					</div>
 				</div>
 
@@ -243,10 +231,11 @@
 											</div>
 										</div>
 									</div>
+
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
+										<li><a name="wish" value="wish1" href="/wishlist/{{products.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="/cart/{{products.productid}}"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
 							</div>
@@ -280,7 +269,7 @@
 									</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="/wishlist/{{laptop.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
 										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
@@ -312,7 +301,7 @@
 									</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="/wishlist/{{mobile.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
 										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
@@ -343,7 +332,7 @@
 									</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="/wishlist/{{tv.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
 										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
@@ -370,7 +359,7 @@
 													<a href="/productname/{{tv.productid}}"><img src="{{ url_for('static',filename=fname)}}" alt="" /></a>
 													<h2>{{tv.productprice}}</h2>
 													<a href="/productname/{{tv.productid}}"><p>{{tv.productname}}</p></a>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+													<a href="/wishlist/{{tv.productid}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 												</div>
 												
 											</div>

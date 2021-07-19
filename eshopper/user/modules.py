@@ -20,22 +20,5 @@ class user_login(db.Model):
     password = db.Column(db.String(80), nullable=False)
     gender = db.Column(db.String(15), nullable=True)
 
-    def __init__(self, firstname, lastname, phone, email, dob, pincode, city, landmark, houseno, state, country,
-                 address, gender, password):
-        self.name = firstname
-        self.name = lastname
-        self.phone_num = phone
-        self.dob = dob
-        self.pincode = pincode
-        self.city = city
-        self.landmark = landmark
-        self.houseno = houseno
-        self.state = state
-        self.country = country
-        self.gender = gender
-        self.address = address
-        self.password = password
-        self.email = email
-
 
 

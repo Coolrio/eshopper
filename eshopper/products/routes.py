@@ -2,7 +2,7 @@ from flask import  render_template, request, session, redirect, url_for,flash,Bl
 from eshopper import app, db, bcrypt,params
 from eshopper.products.modules import product
 from eshopper.user.modules import user_login
-
+from eshopper.wishlist.modules import Wishlist
 products = Blueprint('products', __name__)
 
 
@@ -12,6 +12,7 @@ def post_route(product11):
     int (product11)
     product1 = product.query.filter_by(productid=product11).first()
     return render_template('product-details.html', product1=product1)
+
 
 
 # for sub brand item like samsung/mobilephones
@@ -27,6 +28,8 @@ def post_route2(brand1):
 
     brandname1 = product.query.filter_by(brand=brand1).all()
     return render_template('productpage.html', brandname1=brandname1)
+
+
 
 
 @products.route("/productcategory/<string:item>", methods=['GET'])
@@ -46,3 +49,11 @@ def productpage():
     except:
         name=""
     return render_template('productpage.html', product=product_pro)
+
+
+# for individual item
+@products.route("/wishlist/<string:product11>", methods=['GET'])
+def wishlist(product11):
+    int (product11)
+    product1 = product.query.filter_by(productid=product11).first()
+    return render_template('product-details.html', product1=product1)

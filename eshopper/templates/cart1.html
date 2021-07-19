@@ -6,10 +6,9 @@
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
 				  <li><a href="#">Home</a></li>
-				  <li class="active">Check out</li>
+				  <li class="active">Cart</li>
 				</ol>
 			</div><!--/breadcrums-->
-
 
 			<div class="review-payment">
 				<h2>Review & Payment</h2>
@@ -27,8 +26,8 @@
 							<td></td>
 						</tr>
 					</thead>
-					{% for wishlist1 in wishlist1 %}
-						{% set fname = 'images/product/' + wishlist1.image %}
+					{% for cart1 in cart1 %}
+						{% set fname = 'images/product/' + cart1.image %}
 					<tbody>
 
 						<tr>
@@ -36,11 +35,11 @@
 								<a href=""><img src="{{ url_for('static',filename=fname)}}" height="150" width="150" alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">{{wishlist1.productname}}</a></h4>
+								<h4><a href="">{{cart1.productname}}</a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
-								<p>{{wishlist1.productprice}}</p>
+								<p>{{cart1.productprice}}</p>
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
@@ -50,20 +49,48 @@
 								</div>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">{{wishlist1.productprice}}</p>
+								<p class="cart_total_price">{{cart1.productprice}}</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="/delete/{{wishlist1.sno}}"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="/delete/{{cart1.sno}}"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						{% endfor %}
 
+
+
+						<tr>
+							<td colspan="4">&nbsp;</td>
+							<td colspan="2">
+								<table class="table table-condensed total-result">
+									<tr>
+										<td>products price</td>
+										<td>₹{{total1}}</td>
+									</tr>
+									<tr>
+										<td>Exo Tax</td>
+										<td>$2</td>
+									</tr>
+									<tr class="shipping-cost">
+										<td>Shipping Cost</td>
+										<td>Free</td>										
+									</tr>
+									<tr>
+										<td>Total</td>
+										<td><span>₹{{total1}}</span></td>
+									</tr>
+									<tr>
+										<td colspan="2"><center><a class="btn btn-primary" href="">Order</a></center></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
 
+		</div>
 	</section> <!--/#cart_items-->
 
 	
-
  {% endblock %}
