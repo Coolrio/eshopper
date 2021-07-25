@@ -11,9 +11,10 @@ cart = Blueprint('cart', __name__)
 def view_cart():
     if ('user' in session):
         cart1 = Cart.query.filter_by(user=session['user']).all()
-        cart2 = Cart.query.filter_by().all()
+        cart2 = Cart.query.filter_by(user=session['user']).all()
         total1=0
         for cart2 in cart2:
+            int(cart2.total)
             total1=total1+cart2.total
 
 

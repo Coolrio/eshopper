@@ -14,15 +14,10 @@
 						
 						<div class="carousel-inner">
 							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Festival offer</h2>
-									<p>Attractive offers on this diwali, Bring happiness to home. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
+
 								<div class="col-sm-6">
 									<img src="{{ url_for('static',filename='images/images/1 (5).jpg')}}" class="girl img-responsive" alt="" />
-									<img src="{{ url_for('static',filename='images/home/pricing.png')}}"  class="pricing" alt="" />
+									
 								</div>
 							</div>
 							<div class="item">
@@ -222,7 +217,7 @@
 										<div class="productinfo text-center">
 											<a href="/productname/{{products.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /><br></a>
 											<br><p><a href="/productname/{{products.productid}}">{{products.productname}}</a></p>
-											<a href="/productname/{{products.productid}}"><h2>{{products.productprice}}</h2></a>
+											<a href="/productname/{{products.productid}}"><h2>₹ {{products.productprice}}</h2></a>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
 										<div class="product-overlay">
@@ -241,8 +236,8 @@
 							</div>
 						</div>
 						{% endfor %}
-
-						<center><div class="main-button-class"><a href="/productpage"><button class="btn"id="main-button">view all</button></div></center>
+						<center><div><a href="/productpage" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View all</a></div></center>
+						<!--<center><div class="btn btn-default add-to-cart"><a href="/productpage"><button class="btn"id="main-button">view all</button></div></center>-->
 
 						</div>
 						<div></div><hr><br>
@@ -257,7 +252,7 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<a href="/productname/{{laptop.productid}}"> <img  src="{{ url_for('static',filename=fname)}}" height="210px;" /></a>
-											<h2>{{laptop.productprice}}</h2>
+											<h2>₹ {{laptop.productprice}}</h2>
 											<p><a href="/productname/{{laptop.productid}}">{{laptop.productname}}</a></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
@@ -270,13 +265,13 @@
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
 										<li><a href="/wishlist/{{laptop.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
+										<li><a href="/cart/{{laptop.productid}}"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
 							</div>
 						</div></a>
 						{% endfor %}
-
+						<center><div><button name="laptop" value="view all"><a href="/productcategory/laptop" class="btn btn-default add-to-cart" name="laptop"><i class="fa fa-shopping-cart"></i>View all</a></button></div></center>
 
 					</div><!--features_items-->
 
@@ -289,7 +284,7 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<a href="/productname/{{mobile.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /></a>
-											<h2>{{mobile.productprice}}</h2>
+											<h2>₹ {{mobile.productprice}}</h2>
 											<a href="/productname/{{mobile.productid}}">{{mobile.productname}}</a></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
@@ -302,13 +297,13 @@
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
 										<li><a href="/wishlist/{{mobile.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
+										<li><a href="/cart/{{mobile.productid}}"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
 							</div>
 						</div></a>
 						{% endfor %}
-
+<center><div><a href="/productcategory/mobilephones" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View all</a></div></center>
 					
 					</div><!--features_items-->
 				
@@ -321,7 +316,7 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<a href="/productname/{{tv.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px" width="200px" /></a>
-											<h2>{{tv.productprice}}</h2>
+											<h2>₹ {{tv.productprice}}</h2>
 												<a href="/productname/{{tv.productid}}"></a><p>{{tv.productname}}</a></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 										</div>
@@ -333,14 +328,16 @@
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
 										<li><a href="/wishlist/{{tv.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
+										<li><a href="/cart/{{tv.productid}}"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						{% endfor %}
+<center><div><a href="/productcategory/tv" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View all</a></div></center>
+					</div>
 
-					</div><!--features_items-->
+						<!--features_items-->
 					
 					
 					
@@ -357,22 +354,29 @@
 											<div class="single-products">
 												<div class="productinfo text-center">
 													<a href="/productname/{{tv.productid}}"><img src="{{ url_for('static',filename=fname)}}" alt="" /></a>
-													<h2>{{tv.productprice}}</h2>
+													<h2>₹ {{tv.productprice}}</h2>
 													<a href="/productname/{{tv.productid}}"><p>{{tv.productname}}</p></a>
 													<a href="/wishlist/{{tv.productid}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 												</div>
-												
+												<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="/wishlist/{{tv.productid}}"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="/cart/{{tv.productid}}"><i class="fa fa-plus-square"></i>Buy Now</a></li>
+									</ul>
+								</div>
 											</div>
 										</div>
 									</div>
 									{% endfor %}
+
 									</div>
+
 							</div>
 							 
 						</div>
 					</div><!--/recommended_items-->
 
-
+<center><div><a href="/productcategory/tv" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View all</a></div></center>
 
 
 					

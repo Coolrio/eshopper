@@ -27,3 +27,6 @@ def contact():
        
     return render_template('contact.html')
 
+@utils.route("/buy")
+def buy():
+    return render_template('shop-checkout2.html')

@@ -1,6 +1,6 @@
 from datetime import datetime
-from eshopper import db
-
+from eshopper import db,app
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 class user_login(db.Model):
@@ -20,5 +20,16 @@ class user_login(db.Model):
     password = db.Column(db.String(80), nullable=False)
     gender = db.Column(db.String(15), nullable=True)
 
+    def get_reset_token(self, expires_sec=1800):
+        s = Serializer(app.config['SECRET_KEY'], expires_sec)
+        return s.dumps({'sno': self.sno}).decode('utf-8')
 
+    @staticmethod
+    def verify_reset_token(token):
+        s = Serializer(app.config['SECRET_KEY'])
+        try:
+            user_id = s.loads(token)['sno']
+        except:
+            return None
+        return user_login.query.get(user_id)
 

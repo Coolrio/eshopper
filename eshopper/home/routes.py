@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, session, redirect, url_for,fl
 from eshopper import app, db, bcrypt,mail,c,params
 from eshopper.user.modules import user_login
 from eshopper.products.modules import product
-
+import math
 home = Blueprint('home', __name__)
 
 @home.route("/")
@@ -27,8 +27,10 @@ def home1():
                            ,laptop=laptop,washing=washing,tv=tv,name=name)
 
 
+
+
 @home.route("/search", methods=['GET'])
 def searchbar():
-
-       # brandname = product.query.filter_by(brand=serach_string).all()
-        return render_template('productpage.html')
+    if request.method == 'get':
+        serach_string = request.form.get('search')
+        

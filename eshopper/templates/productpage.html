@@ -1,6 +1,7 @@
 
 {% extends "layout.html" %}
 {% block body %}
+
 <section>
 		<div class="container">
 			<div class="row">
@@ -140,56 +141,14 @@
 						<div class="shipping text-center"><!--shipping-->
 							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
 						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
-						</div><!--/shipping-->
+
 
 					</div>
 				</div>
-					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">All products</h2>
-						{% for brandname in brandname %}
-						{% set fname = 'images/product/' + brandname.image %}
-						 <div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-										<div class="productinfo text-center">
-											<a href="/productname/{{brandname.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /></a><br>
-											<br><p><a href="/productname/{{brandname.productid}}">{{brandname.productname}}</a></p>
-											<h2>{{brandname.productprice}}</h2>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
-										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-
-											</div>
-										</div>
-									</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
 
 						<div class="features_items"><!--features_items-->
 
-						{% for product in product %}
+						{% for product in product.items %}
 						{% set fname = 'images/product/' + product.image %}
 						 <div class="col-sm-4">
 							<div class="product-image-wrapper">
@@ -214,69 +173,30 @@
 								</div>
 							</div>
 						</div>
+
 						{% endfor %}
-
-							<div class="features_items"><!--features_items-->
-
-						{% for brandcategory in brandcategory %}
-						{% set fname = 'images/product/' + brandcategory.image %}
-						 <div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-										<div class="productinfo text-center">
-											<a href="/productname/{{brandcategory.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /></a><br>
-											<br><p><a href="/productname/{{brandcategory.productid}}">{{brandcategory.productname}}</a></p>
-											<h2>{{brandcategory.productprice}}</h2>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
-										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-
-											</div>
-										</div>
-									</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-
-								<div class="features_items"><!--features_items-->
-
-						{% for brandname1 in brandname1 %}
-						{% set fname = 'images/product/' + brandname1.image %}
-						 <div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-										<div class="productinfo text-center">
-											<a href="/productname/{{brandname1.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /></a><br>
-											<br><p><a href="/productname/{{brandname1.productid}}">{{brandname1.productname}}</a></p>
-											<h2>{{brandname1.productprice}}</h2>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
-										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-
-											</div>
-										</div>
-									</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
+</div>
 
 
+<style>
+	nextbtn {
+    position: absolute;
+    left: 0px;
+    top: 52px
+</style>
+							<div class="nextbtn">
+							{% for page_num in product.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if product.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('products.productpage', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('products.productpage', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}
 
-					
 
 
 					

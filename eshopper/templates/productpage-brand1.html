@@ -1,0 +1,208 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											<a href="/productcategory/mobilephones">Mobile Phones</a>
+										</a>
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/productbrand/samsung/mobilephones">Samsung </a></li>
+											<li><a href="/productbrand/apple/mobilephones">Apple </a></li>
+											<li><a href="/productbrand/oneplus/mobilephones">OnePlus </a></li>
+											<li><a href="/productbrand/oppo/mobilephones">Oppo</a></li>
+											<li><a href="/productbrand/redmi/mobilephones">Redmi </a></li>
+											<li><a href="/productbrand/realme/mobilephones">Realme </a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											<a href="/productcategory/washingmachine">Washing Machines</a>
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/productbrand/samsung/washingmachine">samsung</a></li>
+											<li><a href="/productbrand/lg/washingmachine">Lg</a></li>
+											<li><a href="/productbrand/godrej/washingmachine">godrej</a></li>
+											<li><a href="/productbrand/whirlpool/washingmachine">Whirlpool</a></li>
+											<li><a href="/productbrand/onida/washingmachine">Onida</a></li>
+											<li><a href="/productbrand/haier/washingmachine">Haier</a></li>
+											<li><a href="/productbrand/panasonic/washingmachine">Panasonic</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											<a href="/productcategory/aircondition">Aircondition</a>
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/productbrand/samsung/aircondition">Samsung</a></li>
+											<li><a href="/productbrand/lg/aircondition">Lg</a></li>
+											<li><a href="/productbrand/whirlpool/aircondition">whirpool</a></li>
+											<li><a href="/productbrand/godrej/aircondition">godrej</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/washingmachine">REFRIGERATORS</a></h4>
+								</div>
+							</div>
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/tablates">Tablates</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/watches">Watches</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/wired_earphones">Earphones</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/laptops">Laptops</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/tv">T.v</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/productcategory/fans">Fans</a></h4>
+								</div>
+							</div>
+
+						</div><!--/category-products-->
+
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="/productbrand/apple"> <span class="pull-right">(50)</span>Apple</a></li>
+									<li><a href="/productbrand/samsung"> <span class="pull-right">(56)</span> Samsung</a></li>
+									<li><a href="/productbrand/lg"> <span class="pull-right">(27)</span>Lg</a></li>
+									<li><a href="/productbrand/xiomi"> <span class="pull-right">(32)</span>Xiomi</a></li>
+									<li><a href="/productbrand/whirlpool"> <span class="pull-right">(5)</span>Whirpool</a></li>
+									<li><a href="/productbrand/realme"> <span class="pull-right">(9)</span>Realme</a></li>
+									<li><a href="/productbrand/oppo"> <span class="pull-right">(4)</span>Oppo</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+
+						<div class="price-range"><!--price-range-->
+							<h2>Price Range</h2>
+							<div class="well text-center">
+								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+							</div>
+						</div><!--/price-range-->
+
+						<div class="shipping text-center"><!--shipping-->
+							<img src="{{ url_for('static',filename='images/home/shipping.jpg')}}" alt="" />
+						</div><!--/shipping-->
+
+
+					</div>
+				</div>
+
+						<div class="features_items"><!--features_items-->
+
+						{% for brandname1 in brandname1.items %}
+						{% set fname = 'images/product/' + brandname1.image %}
+						 <div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+											<a href="/productname/{{brandname1.productid}}"><img  src="{{ url_for('static',filename=fname)}}" height="250px;" /></a><br>
+											<br><p><a href="/productname/{{brandname1.productid}}">{{brandname1.productname}}</a></p>
+											<h2>{{brandname1.productprice}}</h2>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+										</div>
+										<div class="product-overlay">
+											<div class="overlay-content">
+
+											</div>
+										</div>
+									</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to Cart</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						{% endfor %}
+</div>
+
+
+<style>
+	nextbtn {
+    position: absolute;
+    left: 0px;
+    top: 52px
+</style>
+							<div class="nextbtn">
+							{% for page_num in brandname1.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if brandname1.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('products.productbrand',brand1='', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('products.productpage', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	 {% endblock %}
